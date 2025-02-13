@@ -33,6 +33,7 @@ $(BUILD_DIR)/%.o : %.c
 
 
 install:
+	@mkdir -p $(INSTALL_DIR)
 	@cd ../include; make install; cd ../lib
 	@install -d $(INSTALL_DIR)
 	@install $(BUILD_DIR)/$(TARGET_LIB) $(INSTALL_DIR)

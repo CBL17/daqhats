@@ -35,6 +35,7 @@ daqhats_check_152: daqhats_check_152.o
 all: mcc118_firmware_update daqhats_list_boards mcc172_firmware_update daqhats_check_152 mcc128_firmware_update $(SUBDIRS)
 
 install: $(SUBDIRS)
+	@mkdir -p $(INSTALL_DIR)
 	@install -d $(INSTALL_DIR)
 	@install mcc172_firmware_update $(INSTALL_DIR)
 	@install mcc128_firmware_update $(INSTALL_DIR)
