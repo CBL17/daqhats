@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ToolPath='/usr/local/bin'
+ToolPath='/usr/bin/'
 
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
@@ -62,7 +62,7 @@ if [ "$rc" != 0 ]; then
    exit $rc
 fi
 
-SYS=/sys/class/i2c-adapter/i2c-$BUS
+SYS=/sys/class/i2c-dev/i2c-$BUS/device
 
 rm -f /etc/mcc/hats/*.bin
 
