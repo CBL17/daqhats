@@ -59,18 +59,3 @@ if [ $? -ne 0 ]; then
 fi
 
 echo
-
-# Read HAT EEPROMs to /etc/mcc/hats
-echo "Reading DAQ HAT EEPROMs"
-echo
-daqhats_read_eeproms
-
-echo
-
-# Turn SPI on (needed for some MCC 118s that had incorrectly programmed EEPROMs)
-if [ $(raspi-config nonint get_spi) -eq 1 ]; then
-   raspi-config nonint do_spi 0
-fi
-
-echo "Shared library install complete."
-echo "The Python library is not automatically installed. See README.md for instructions to install the Python library."
